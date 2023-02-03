@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "429009867888",
+    "project_id": "office-room-2589f",
+    "storage_bucket": "office-room-2589f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:429009867888:android:9cf15eb46ab7fd2b3390b5",
+        "android_client_info": {
+          "package_name": "com.example.officeroom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "429009867888-2gdtf3t6fq887sihsoehkugon8pbktc6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMt-dHOHBCaxh0ev8MkzKQoipeUS7xDWY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "429009867888-2gdtf3t6fq887sihsoehkugon8pbktc6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
