@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //this is a test comment
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         sign_in = findViewById(R.id.sign_in);
