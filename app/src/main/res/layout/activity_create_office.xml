@@ -50,7 +50,7 @@
         android:padding="20dp" />
 
     <EditText
-        android:id="@+id/office_type"
+        android:id="@+id/rank"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/office_id"
@@ -61,14 +61,14 @@
         android:background="@drawable/round_white"
         android:drawableLeft="@drawable/baseline_email_24"
         android:drawablePadding="20dp"
-        android:hint="Office Type"
+        android:hint="Rank"
         android:padding="20dp" />
 
     <EditText
-        android:id="@+id/posts"
+        android:id="@+id/rankId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/office_type"
+        android:layout_below="@+id/rank"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
@@ -76,19 +76,42 @@
         android:background="@drawable/round_white"
         android:drawableLeft="@drawable/baseline_email_24"
         android:drawablePadding="20dp"
-        android:hint="Posts"
+        android:hint="Rank Id"
         android:padding="20dp" />
 
-    <Button
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id ="@+id/create"
-        android:layout_below="@+id/posts"
+        android:layout_below="@+id/rankId"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="300dp"
-        android:text ="Create"
-        android:textColor="@color/white"
-        android:background="@drawable/round_green"  />
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="right">
+
+        <Button
+            android:id="@+id/addRank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/posts"
+            android:layout_margin="2.5dp"
+            android:background="@drawable/round_green"
+            android:text="Add"
+            android:onClick="addRank"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/create"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/posts"
+            android:layout_margin="2.5dp"
+            android:background="@drawable/round_green"
+            android:onClick="createRoom"
+            android:text="create"
+            android:textColor="@color/white" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 
 </RelativeLayout>
