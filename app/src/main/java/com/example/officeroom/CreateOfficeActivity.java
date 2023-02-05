@@ -20,7 +20,7 @@ import java.util.Map;
 public class CreateOfficeActivity extends AppCompatActivity {
 
     private EditText officeName;
-    private EditText officeId;
+    public static EditText officeId;
     private EditText Rank;
     private EditText RankId;
 
@@ -75,6 +75,7 @@ public class CreateOfficeActivity extends AppCompatActivity {
         String text_rank_Id = RankId.getText().toString();
 
         Map<String,Object> Intro = new HashMap<>();
+        Intro.put("Office Name",text_officeName);
         Intro.put(text_rank,text_rank_Id);
 
         db.collection(text_officeId).document(text_rank_Id).set(Intro)

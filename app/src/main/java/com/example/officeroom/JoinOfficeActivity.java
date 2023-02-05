@@ -3,6 +3,7 @@ package com.example.officeroom;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,8 +11,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -20,6 +23,10 @@ public class JoinOfficeActivity extends AppCompatActivity {
     private EditText post_id;
     private Button join;
 
+    public static String text_office_id;
+
+    boolean intoTheRoom=false;
+
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +34,7 @@ public class JoinOfficeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_join_office);
 
         findAllId();
+
     }
 
     private void findAllId(){
@@ -35,23 +43,21 @@ public class JoinOfficeActivity extends AppCompatActivity {
         join = findViewById(R.id.join);
     }
 
+
+
     public void joinInRoom(View view){
-        String text_office_id = office_id.getText().toString();
+        text_office_id = office_id.getText().toString();
         String text_post_id = post_id.getText().toString();
         db.collection(text_office_id).document(text_post_id).get()
-                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                     @Override
-                    public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        if(documentSnapshot.exists()){
-                            Toast.makeText(JoinOfficeActivity.this, "Successful login", Toast.LENGTH_SHORT).show();
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if(task.getResult().exists()){
+                            startActivity(new Intent(JoinOfficeActivity.this,Room.class));
+                            finish();
                         }else{
-                            Toast.makeText(JoinOfficeActivity.this, "Provided id is wrong", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(JoinOfficeActivity.this, "Password not matched", Toast.LENGTH_SHORT).show();
                         }
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.d("JoinOfficeActivity",e.toString());
                     }
                 });
     }
