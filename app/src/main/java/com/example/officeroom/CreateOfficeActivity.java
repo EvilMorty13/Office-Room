@@ -54,7 +54,7 @@ public class CreateOfficeActivity extends AppCompatActivity {
         Map<String,Object> Intro = new HashMap<>();
         Intro.put(text_rank,text_rank_Id);
 
-        db.collection(text_officeId).document(text_rank).set(Intro)
+        db.collection(text_officeId).document(text_rank_Id).set(Intro)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
@@ -77,7 +77,7 @@ public class CreateOfficeActivity extends AppCompatActivity {
         Map<String,Object> Intro = new HashMap<>();
         Intro.put(text_rank,text_rank_Id);
 
-        db.collection(text_officeId).document(text_rank).set(Intro)
+        db.collection(text_officeId).document(text_rank_Id).set(Intro)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {

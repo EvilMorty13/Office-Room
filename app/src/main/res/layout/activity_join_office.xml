@@ -52,6 +52,7 @@
         android:layout_marginLeft="300dp"
         android:text ="Join"
         android:textColor="@color/white"
-        android:background="@drawable/round_green"  />
+        android:background="@drawable/round_green"
+        android:onClick="joinInRoom"/>
 
 </RelativeLayout>
